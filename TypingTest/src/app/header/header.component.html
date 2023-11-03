@@ -1,0 +1,133 @@
+<header>
+
+    <div class="menu-button" (click)="menuButtonClicked()">
+        <i class='bx bx-menu'></i>
+    </div>
+
+    <div class="brand-name">
+        <span>Typing Test</span>
+    </div>
+
+    <div class="btn-group">
+        <button class="btn btn-outline-light btn-lg" *ngIf="!isLoggedIn()" data-bs-toggle="modal"
+            data-bs-target="#loginModal">Login</button>
+        <button class="btn btn-outline-light btn-lg" *ngIf="!isLoggedIn()" data-bs-toggle="modal"
+            data-bs-target="#registerModal">Register</button>
+        <button class="btn btn-outline-light btn-lg" routerLink="/profile" *ngIf="isLoggedIn()">Profile</button>
+        <button class=" btn btn-outline-light btn-lg" *ngIf="isLoggedIn()" (click)="logOutUser()">Log Out</button>
+    </div>
+
+</header>
+
+<!-- Modal to Register -->
+<div class="modal fade" id="registerModal" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Enter Your Data</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+
+                <form [formGroup]="registerForm">
+                    <div class="row">
+                        <div class="col">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" class="form-control" formControlName="name">
+                            <div class="form-text text-danger"
+                                *ngIf="Name.errors?.['required'] && (Name.dirty || Name.touched)">
+                                First Name is Required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" id="email" class="form-control" formControlName="email">
+                            <div class="form-text text-danger"
+                                *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
+                                Email is Required
+                            </div>
+                            <div class="form-text text-danger"
+                                *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
+                                Email is Invalid.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col">
+                            <label for="pwd" class="form-label">Password</label>
+                            <input type="password" id="pwd" class="form-control" formControlName="pwd">
+                            <div class="form-text text-danger"
+                                *ngIf="PWD.errors?.['required'] && (PWD.dirty || PWD.touched)">
+                                Password is Required
+                            </div>
+                            <div class="form-text text-danger"
+                                *ngIf="PWD.errors?.['minlength'] || PWD.errors?.['maxlength'] && (PWD.dirty || PWD.touched)">
+                                Password should be at least 6 and at the max 15 characters long.
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="registerForm.invalid"
+                    (click)="createAccount()">Create Account</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal to Login -->
+<div class="modal fade" id="loginModal" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">LOGIN</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="loginForm">
+                    <div class="row">
+                        <div class="col">
+                            <label for="lemail" class="form-label">E-mail</label>
+                            <input type="email" id="lemail" class="form-control" formControlName="email">
+                            <div class="form-text text-danger"
+                                *ngIf="LEmail.errors?.['required'] && (LEmail.dirty || LEmail.touched)">
+                                Email is Required
+                            </div>
+                            <div class="form-text text-danger"
+                                *ngIf="LEmail.errors?.['email'] && (LEmail.dirty || LEmail.touched)">
+                                Email is Invalid.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col">
+                            <label for="lpwd" class="form-label">Password</label>
+                            <input type="password" id="lpwd" class="form-control" formControlName="pwd">
+                            <div class="form-text text-danger"
+                                *ngIf="LPWD.errors?.['required'] && (LPWD.dirty || LPWD.touched)">
+                                Password is Required
+                            </div>
+                            <div class="form-text text-danger"
+                                *ngIf="LPWD.errors?.['minlength'] || LPWD.errors?.['maxlength'] && (LPWD.dirty || LPWD.touched)">
+                                Password should be at least 6 and at the max 15 characters long.
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                    [disabled]="loginForm.invalid" (click)="loginUser()">Login</button>
+            </div>
+        </div>
+    </div>
+</div>

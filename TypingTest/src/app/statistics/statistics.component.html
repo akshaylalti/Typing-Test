@@ -1,0 +1,43 @@
+<div class="statistics-wrapper" *ngIf="this.navigationService.isLoggedIn()">
+
+    <div class="statistics-box">
+
+        <table class="table table-striped table-hover">
+            <thead class="bg-warning">
+                <tr>
+                    <th colspan="2" class="text-center fs-3">Statistics</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Total Tests Taken</td>
+                    <td>{{statistics.totalTests}}</td>
+                </tr>
+
+                <tr>
+                    <td>Average Typing Speed</td>
+                    <td>{{statistics.averageSpeed}} WPM</td>
+                </tr>
+
+                <tr>
+                    <td>Words Typed</td>
+                    <td>{{statistics.totalWords}}</td>
+                </tr>
+
+                <tr>
+                    <td>Characters Typed</td>
+                    <td>{{statistics.totalCharacters}}</td>
+                </tr>
+
+                <tr>
+                    <td>Accuracy</td>
+                    <td>{{statistics.averageAccuracy}}%</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+<div class="login-error" *ngIf="!this.navigationService.isLoggedIn()">First Login to see the Statistics.</div>

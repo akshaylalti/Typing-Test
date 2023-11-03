@@ -1,0 +1,44 @@
+.about-us-wrapper {
+  width: 700px;
+  height: 300px;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  width: 500px;
+  box-shadow: 0px 0px 10px var(--Gray500);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+thead {
+  background-color: var(--Yellow900);
+  text-align: center;
+  font-size: 1.5rem;
+}
+thead th {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+td:nth-of-type(2) {
+  font-weight: 500;
+}
+
+.social-media li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+i {
+  font-size: 1.5rem;
+}
+
+.social-media li:hover i {
+  font-size: 1.7rem;
+}

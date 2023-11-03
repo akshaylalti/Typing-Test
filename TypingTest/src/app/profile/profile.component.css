@@ -1,0 +1,43 @@
+.login-error {
+  font-size: 2rem;
+  width: max-content;
+  margin: 2rem auto;
+  font-weight: bold;
+  font-style: italic;
+  color: var(--Gray700);
+}
+
+.profile {
+  width: 700px;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 0px 2rem var(--Gray500);
+}
+
+.profile-image {
+  width: 30%;
+  padding: 10px;
+}
+img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.profile-info {
+  width: 70%;
+  padding: 1rem;
+}
+
+thead {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  color: var(--Gray700);
+}
+
+td:nth-child(1) {
+  font-weight: bold;
+  width: 40%;
+}

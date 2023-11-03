@@ -1,0 +1,40 @@
+<div class="profile-wrapper">
+
+    <div class="profile" *ngIf="this.navigationService.isLoggedIn()">
+
+        <div class="profile-image">
+            <img src="../../assets/Images/Profile-01.jpg" alt="">
+        </div>
+
+        <div class="profile-info">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td colspan="2">Welcome, {{user.name}}</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td>{{user.name}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Email</td>
+                        <td>{{user.email}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>User Since</td>
+                        <td>{{user.memberSince | date: "mediumDate"}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="login-error" *ngIf="!this.navigationService.isLoggedIn()">
+        OOPS! You are not Logged In!
+    </div>
+
+</div>
