@@ -1,50 +1,87 @@
-A Typing Test Full Stack project is a web application or software that allows users to assess and improve their typing speed and accuracy. This type of project typically involves both front-end and back-end development, making it a full-stack endeavor. Let's break down the components and features you might find in such a project:
+# Typing-Test Full Stack Website
 
-1. **User Interface (UI):**
-   - A user-friendly interface where users can interact with the typing test.
-   - Options to customize the test, such as choosing the text to type, adjusting the time duration, and selecting the difficulty level.
-   - Real-time display of the text to be typed and a typing area for the user.
+This project is a Typing-Test Full Stack website designed to help users assess and improve their typing speed and accuracy. It combines a feature-rich front-end built with Angular and a powerful back-end powered by ASP.NET Core Web API, with SQL Server as the database to store user data and typing test results.
 
-2. **Typing Test Logic:**
-   - A timer that starts counting down when the user begins typing and stops when the time is up.
-   - Calculation of typing speed, measured in words per minute (WPM) or characters per minute (CPM).
-   - Calculation of typing accuracy, which is often expressed as a percentage of correct keystrokes.
+## Features
 
-3. **Text Database:**
-   - A database that stores a collection of texts or passages for users to practice typing. These texts may include quotes, excerpts from books, or random sentences.
+- **Typing Tests**: Users can take typing tests with various text options and time durations.
+- **Real-time Typing Analysis**: Live feedback on typing speed (WPM) and accuracy while taking the test.
+- **User Accounts**: User registration, login, and profile management.
+- **Test History**: Users can review their previous typing test results.
+- **Leaderboards**: Showcase top users with the highest typing speeds.
+- **Text Database**: A collection of texts and passages for typing practice.
+- **Responsive Design**: Works well on various devices and screen sizes.
 
-4. **User Authentication:**
-   - A system for user registration and login to track and save their typing test results and progress.
-   - User profiles that display personal typing statistics and achievements.
+## Technologies Used
 
-5. **Leaderboards:**
-   - Leaderboards to showcase the top typists based on their typing speed and accuracy.
-   - Social features like sharing your scores with friends or challenging others to typing tests.
+- **Front-end**: Angular
+- **Back-end**: ASP.NET Core Web API
+- **Database**: SQL Server
+- **Authentication**: JWT (JSON Web Tokens)
+- **Data Access**: Entity Framework Core
+- **Styling**: CSS, Bootstrap
+- **Dependency Management**: npm
+- **Version Control**: Git
 
-6. **Feedback and Analysis:**
-   - Feedback to users on their performance, including typing speed, accuracy, and any errors made.
-   - Historical data tracking to help users see their progress over time.
+## Setup
 
-7. **Responsive Design:**
-   - Ensuring that the project is responsive and works well on different devices, such as desktops, tablets, and mobile phones.
+To run this project locally, follow these steps:
 
-8. **Security:**
-   - Implementing security measures to protect user data, prevent cheating in typing tests, and secure the application against common web vulnerabilities.
+1. Clone the repository:
 
-9. **Backend Development:**
-   - Creating a server and API for handling user data, test results, and database queries.
-   - Implementing algorithms to calculate typing speed and accuracy.
-   - Ensuring the project can handle a high volume of concurrent users.
+   ```bash
+   git clone https://github.com/your-username/typing-test-fullstack.git
+   ```
 
-10. **Frontend Development:**
-    - Designing the user interface with HTML, CSS, and JavaScript.
-    - Implementing interactivity for the typing test, timer, and user feedback.
-    - Integrating with the backend through API calls.
+2. Navigate to the project directory:
 
-11. **Deployment:**
-    - Deploying the project on a web server to make it accessible to users worldwide.
+   ```bash
+   cd typing-test-fullstack
+   ```
 
-12. **Testing and Debugging:**
-    - Thoroughly testing the application to identify and fix bugs, including cross-browser compatibility testing.
+3. Install front-end dependencies:
 
-Typing Test Full Stack projects are not only fun and engaging for users but also useful for those looking to improve their typing skills for work or personal reasons. They can serve as both educational tools and entertainment. Developers often build such projects to showcase their skills in web development and to contribute to the learning and productivity of users.
+   ```bash
+   cd ClientApp
+   npm install
+   ```
+
+4. Set up the SQL Server database and update the connection string in the `appsettings.json` file in the API project.
+
+5. Apply database migrations:
+
+   ```bash
+   dotnet ef database update
+   ```
+
+6. Build and run the API:
+
+   ```bash
+   dotnet run
+   ```
+
+7. Build and run the Angular front-end:
+
+   ```bash
+   cd ClientApp
+   ng serve
+   ```
+
+8. Access the website in your web browser at `http://localhost:4200/`.
+
+## Screenshots
+
+![Typing-Test Screenshot 1](/screenshots/screenshot1.png)
+![Typing-Test Screenshot 2](/screenshots/screenshot2.png)
+
+## Contributing
+
+Contributions to this project are welcome. If you have any suggestions, find issues, or want to add new features, please create a GitHub issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+Ensure that you modify this README template to match the specific details and file paths of your project. Additionally, include any relevant information regarding licensing, contributing guidelines, or any specific project-related notes.
